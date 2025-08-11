@@ -4,6 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Вакансія — дистанційна робота</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXVHKB0P4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXVHKB0P4W', { 'anonymize_ip': true });
+</script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -13,10 +23,28 @@
     background: url('cropped-aerial-background-blog-blogger-cafe-communication-1458685-pxhere.com_.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
-    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Кнопка FAQ в углу */
+  .faq-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,215,0,0.95);
+    color: #000;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .faq-btn:hover {
+    background: #ffd700;
+    transform: scale(1.05);
   }
 
   .main {
@@ -28,6 +56,8 @@
     border-radius: 15px;
     flex-wrap: wrap;
     max-width: 1000px;
+    margin: auto;
+    margin-top: 70px;
   }
 
   .left {
@@ -107,15 +137,67 @@
     font-size: 1rem;
   }
 
+  /* FAQ блок */
+  .faq {
+    background: rgba(0, 0, 0, 0.75);
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 1000px;
+  }
+
+  .faq h2 {
+    text-align: center;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+    color: #ffd700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question:hover {
+    color: #ffea85;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+  }
+
   .disclaimer {
     text-align: center;
     font-size: 0.8rem;
     color: #ddd;
-    margin-top: 15px;
+    margin-top: auto;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
   }
 </style>
 </head>
 <body>
+
+<a href="#faq" class="faq-btn">📜 FAQ</a>
 
 <div class="main">
   <div class="left">
@@ -143,15 +225,77 @@
       <li>💻 Комп'ютер або ноутбук</li>
       <li>🌐 Стабільний інтернет</li>
       <li>⌨️ Вміння користуватися ПК на рівні користувача</li>
-      <li>🇬🇧 Знання англійської — плюс, але не обов'язково</li>
+      <li>🌍 Знання англійської — плюс, але не обов'язково</li>
       <li>😊 Гарний настрій і бажання поліпшити своє життя!</li>
     </ul>
-
-    <div class="disclaimer">
-      * Ми не збираємо і не зберігаємо ваші дані. Сторінка має лише інформаційний характер.
-    </div>
   </div>
 </div>
+
+<!-- FAQ -->
+<div id="faq" class="faq">
+  <h2>Часто задавані питання ❓</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Мені потрібно буде розмовляти по телефону? <span>+</span></div>
+    <div class="faq-answer">Ні, зовсім ні, ви будете працювати тільки спілкуючись в чаті за допомогою інтерфейсу нашої компанії.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Що конкретно мені потрібно буде робити? <span>+</span></div>
+    <div class="faq-answer">Спілкуватися в чаті з клієнтом і підтримувати його інтерес до спілкування. Детальніше вам розповість ваш адміністратор.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Я можу працювати вдома чи потрібно їздити в офіс? <span>+</span></div>
+    <div class="faq-answer">Це повністю віддалена робота, вам не потрібно буде їздити в офіс.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Що потрібно, щоб почати? <span>+</span></div>
+    <div class="faq-answer">Оформити заявку на посаду шляхом заповнення невеликої анкети і дочекатися обробки. Це займає кілька годин, максимум добу.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Чи можу я працювати за межами міста? <span>+</span></div>
+    <div class="faq-answer">Так, якщо у вас є стабільний інтернет і комп'ютер, ви зможете працювати у зручний час.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Чи можу я працювати з іншої країни? <span>+</span></div>
+    <div class="faq-answer">Так, обмежень за місцем проживання немає, крім однієї відомої країни.</div>
+  </div>
+
+<div class="faq-item">
+    <div class="faq-question">Якщо я взагалі не володію англійською мовою? <span>+</span></div>
+    <div class="faq-answer">Не хвилюйтеся, велика кількість операторів працюють без знання мови за допомогою сучасних програм для перекладу тексту і навіть зображень та відео, вас всьому навчать і покажуть, як користуватися всім необхідним!</div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  * Ми не збираємо і не зберігаємо ваші дані. Сторінка має лише інформаційний характер.
+</div>
+
+<script>
+  // Плавный скролл
+  document.querySelectorAll('a[href^="#faq"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Анимация FAQ
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('active');
+      const sign = question.querySelector('span');
+      sign.textContent = item.classList.contains('active') ? '−' : '+';
+    });
+  });
+</script>
 
 </body>
 </html>
